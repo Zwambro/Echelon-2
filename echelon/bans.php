@@ -51,7 +51,7 @@ $start_row = $page_no * $limit_rows;
 if($type_admin)
 	$query = "SELECT p.type, p.time_add, p.time_expire, p.reason, p.duration, target.id as client_id, target.name as client_name, c.id as admins_id, c.name as admins_name FROM penalties p, clients c, clients as target WHERE admin_id != '0' AND (p.type = 'Ban' OR p.type = 'TempBan') AND inactive = 0 AND p.time_expire <> 0 AND p.client_id = target.id AND p.admin_id = c.id";
 else
-	$query = "SELECT p.type, p.time_add, p.time_expire, p.reason, p.data, p.duration, p.client_id, c.name as client_name FROM penalties p LEFT JOIN clients c ON p.client_id = c.id WHERE p.admin_id = 0 AND (p.type = 'Ban' OR p.type = 'TempBan') AND p.inactive = 0";
+	$query = "SELECT p.type, p.time_add, p.time_expire, p.reason, p.data, p.duration, p.client_id, c.name as client_name FROM penalties p LEFT JOIN clients c ON p.client_id = c.id WHERE p.admin_id = 0 AND (p.type = 'Ban' OR p.type = 'TempBan' OR p.type = 'Kick') AND p.inactive = 0";
 
 
 $query .= sprintf(" ORDER BY %s ", $orderby);
