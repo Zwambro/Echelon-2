@@ -180,7 +180,7 @@ EOD;
 		$no_data = false;
 	} else {
 		$no_data = true;
-		if($type_admin) // slight chnages between different page types
+		if($type_admin) // slight changes between different page types
 			echo '<tr class="odd"><td colspan="7">There no tempbans or bans made by admins in the database</td></tr>';
 		else
 			echo '<tr class="odd"><td colspan="6">There no tempbans or bans made by the B3 bot in the database</td></tr>';
